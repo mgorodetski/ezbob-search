@@ -1,10 +1,10 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { BrowserRouter } from 'react-router-dom';
 import App from './App';
+import { store } from './congigStore/store';
 import reportWebVitals from './reportWebVitals';
-import { StateProvider } from './context/StateProvider';
-import reducer, { initialState } from './context/reducer';
 
 
 
@@ -12,9 +12,9 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
-      <StateProvider initialState={initialState} reducer={reducer}>
+      <Provider store={store}>
         <App />
-      </StateProvider>
+      </Provider>
     </BrowserRouter>
   </React.StrictMode>
 );

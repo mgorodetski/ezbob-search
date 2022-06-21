@@ -6,11 +6,13 @@ import SearchBar from './SearchBar.jsx'
 import { Router } from 'react-router-dom';
 
 const Main = () => {
-    const [state, setState] = useState('');
+    const [input, setInput] = useState('');
+
+    
 
     return (
         <div className="main">
-           
+
 
             <div className="main__header">
                 <h1>SearchX</h1>
@@ -18,11 +20,11 @@ const Main = () => {
             <div className="main__form">
                 <SearchBar />
                 <div className="main__group">
-                    
+
                 </div>
 
             </div>
-           
+
         </div>
     )
 }

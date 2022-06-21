@@ -26,15 +26,17 @@ body {
 }
 
 
-.main__form {
+.main__form .searchbar {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   outline: none;
 }
 
-.main__input {
-  width: 300px;
+
+
+/* .main__input {
+  width: 400px;
   height: 30px;
   border: 1px solid #d1d2d4;
   outline: none;
@@ -44,7 +46,7 @@ body {
   margin-right: auto;
   padding-left: 40px;
 
-}
+} */
 
 .main__group {
   margin-top: 15px;
@@ -52,7 +54,6 @@ body {
   text-align: center;
 }
 
-.main__btn {}
 
 .searchbar__input {
   display: flex;
@@ -64,7 +65,37 @@ body {
   margin: 0 auto;
   margin-top: 30px;
   max-width: 520px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
 }
+
+.autocomplete {
+  position: absolute;
+  top: 120px;
+  background: white;
+  width: 60%;
+  border: 1px solid #d1d2d4;
+  margin: 0 auto;
+  padding: 0;
+  list-style: none;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.15);
+  z-index: 5;
+  overflow: auto;
+  max-height: 240px;
+  max-width: 520px;
+  height: auto;
+  /* border-radius: 24px; */
+}
+
+.autocomplete__item {
+  padding: 2px;
+}
+
+.autocomplete__item:hover {
+  background-color: red;
+  cursor: pointer;
+  transition: cubic-bezier(1, 0, 0, 1) .3s all;
+}
+
 
 .searchbar__input>input {
   flex: 1;
@@ -100,5 +131,3 @@ body {
 .searchbar__buttonHidden {
   display: none !important;
 }
-
-

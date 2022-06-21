@@ -2,25 +2,21 @@ import React from 'react';
 import { SearchOutlined } from '@mui/icons-material';
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { useStateValue } from '../context/StateProvider';
-import {actionTypes} from '../context/reducer';
+import { useDispatch } from 'react-redux';
+import { searchAction } from '../actions/searchActions.js';
 
 const SearchBar = ({ hideSearchBtn = false }) => {
     const [input, setInput] = useState('');
     const navigate = useNavigate();
-    const[{}, dispatch] = useStateValue();
+    const dispatch = useDispatch();
 
     const handleClickSearch = e => {
         e.preventDefault();
-        
         console.log('you hit search button', input);
-
-        dispatch({
-            type: actionTypes.SET_SEARCH_TERM,
-            term: input,
-        })
-        // navigate('/search');
+        dispatch(searchAction(input));
+        navigate('/search');
     }
+    
 
     return (
         <form className="searchbar">
